@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --background: #111417;
+  /* Industrial Charcoal */
+  --foreground: #F4F4F4;
+  /* Off White */
+
+  --primary: #007BFF;
+  /* Hydrogen Blue */
+  --secondary: #2C2F33;
+  /* Soft Steel Grey */
+  --accent: #16A34A;
+  /* Eco Green */
+
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
