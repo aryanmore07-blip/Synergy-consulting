@@ -1,81 +1,118 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
     { href: "/", label: "Home" },
     { href: "/#solutions", label: "Solutions" },
     { href: "/#industries", label: "Industries" },
     { href: "/#about", label: "About" },
-    // { href: "/insights", label: "Insights" }, // Hidden until implemented
 ];
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 40);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="flex h-16 items-center justify-between">
-                    <Link href="/" className="flex items-center space-x-2">
-                        <span className="text-xl font-bold font-heading text-white tracking-widest uppercase">
+        <nav
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+                    ? "bg-black/75 backdrop-blur-xl border-b"
+                    : "bg-transparent"
+                }`}
+            style={{
+                borderColor: scrolled ? "rgba(255,255,255,0.06)" : "transparent",
+            }}
+        >
+            <div className="max-w-7xl mx-auto px-6 md:px-10">
+                <div className="flex h-20 items-center justify-between">
+                    {/* Logo */}
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div
+                            className="w-8 h-8 border transition-all duration-300 group-hover:rotate-45"
+                            style={{
+                                borderColor: "var(--gold)",
+                                background: "var(--gold-dim)",
+                            }}
+                        />
+                        <span
+                            className="text-lg tracking-[0.2em] uppercase font-heading font-semibold"
+                            style={{ color: "var(--foreground)", letterSpacing: "0.25em" }}
+                        >
                             Synergy
                         </span>
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex md:items-center md:space-x-8">
+                    {/* Desktop Nav */}
+                    <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                                className="relative text-sm font-body tracking-widest uppercase group"
+                                style={{ color: "var(--foreground-muted)", fontSize: "0.72rem" }}
                             >
                                 {link.label}
+                                <span
+                                    className="absolute -bottom-0.5 left-0 h-px w-0 transition-all duration-300 group-hover:w-full"
+                                    style={{ background: "var(--gold)" }}
+                                />
                             </Link>
                         ))}
-                        <Button variant="default" className="bg-primary hover:bg-primary/90">
+                        <a href="/#about" className="btn-gold ml-4">
                             Get Started
-                        </Button>
+                        </a>
                     </div>
 
-                    {/* Mobile Menu Button */}
+                    {/* Mobile Toggle */}
                     <button
-                        className="flex items-center justify-center p-2 text-muted-foreground md:hidden"
+                        className="md:hidden p-2"
+                        style={{ color: "var(--foreground-muted)" }}
                         onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle navigation"
                     >
-                        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                     </button>
                 </div>
             </div>
 
-            {/* Mobile Navigation */}
+            {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="border-b border-white/10 bg-background md:hidden"
+                        transition={{ duration: 0.3 }}
+                        className="md:hidden border-t overflow-hidden"
+                        style={{
+                            background: "rgba(10,11,15,0.97)",
+                            borderColor: "var(--border)",
+                        }}
                     >
-                        <div className="container px-4 py-4 space-y-4">
+                        <div className="px-6 py-6 flex flex-col gap-6">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="block text-sm font-medium text-foreground hover:text-primary"
+                                    className="text-sm tracking-widest uppercase transition-colors duration-200"
+                                    style={{ color: "var(--foreground-muted)", fontSize: "0.72rem" }}
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.label}
                                 </Link>
                             ))}
-                            <Button className="w-full bg-primary hover:bg-primary/90">
+                            <a href="/#about" className="btn-gold text-center">
                                 Get Started
-                            </Button>
+                            </a>
                         </div>
                     </motion.div>
                 )}

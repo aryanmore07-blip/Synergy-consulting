@@ -4,41 +4,146 @@ import { motion } from "framer-motion";
 
 export function AboutSection() {
     return (
-        <section id="about" className="py-24 bg-background border-t border-white/5">
-            <div className="container px-4 md:px-6 mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-6">
-                        About <span className="text-primary">Synergy</span>
-                    </h2>
-                    <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                        We are dedicated to enabling factories, waste handlers, and food manufacturers to transition toward sustainable, regulation-compliant, and scalable green industrial practices.
-                    </p>
-                </div>
+        <section
+            id="about"
+            className="py-32 relative overflow-hidden"
+            style={{ background: "var(--background)" }}
+        >
+            {/* Gold glow left */}
+            <div
+                className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none animate-pulse-glow"
+                style={{
+                    width: "400px",
+                    height: "400px",
+                    background: "radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",
+                    filter: "blur(60px)",
+                }}
+            />
 
-                <div className="grid md:grid-cols-2 gap-12">
+            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                    className="text-center mb-20"
+                >
+                    <p className="label-mono section-tag mb-4">Our Identity</p>
+                    <h2
+                        className="font-heading mx-auto"
+                        style={{
+                            fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+                            fontWeight: 300,
+                            lineHeight: 1.1,
+                            maxWidth: "700px",
+                        }}
+                    >
+                        About{" "}
+                        <span className="text-gradient-gold" style={{ fontWeight: 600 }}>
+                            Synergy
+                        </span>
+                    </h2>
+
+                    {/* Animated divider */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "4rem" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.9, delay: 0.2 }}
+                        className="h-px mx-auto mt-8 mb-8"
+                        style={{ background: "var(--gold)" }}
+                    />
+
+                    <p
+                        className="font-body max-w-3xl mx-auto text-sm md:text-base"
+                        style={{ color: "var(--foreground-muted)", lineHeight: 1.85 }}
+                    >
+                        We are dedicated to enabling factories, waste handlers, and food
+                        manufacturers to transition toward sustainable, regulation-compliant,
+                        and scalable green industrial practices — for a stronger industrial India.
+                    </p>
+                </motion.div>
+
+                {/* Vision / Mission — horizontal banner cards */}
+                <div className="grid md:grid-cols-2 gap-px" style={{ background: "var(--border)" }}>
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-colors"
+                        transition={{ duration: 0.65 }}
+                        className="group relative flex flex-col p-10 transition-all duration-400"
+                        style={{ background: "var(--surface-raised)" }}
                     >
-                        <h3 className="text-2xl font-bold font-heading mb-4 text-primary">Our Vision</h3>
-                        <p className="text-gray-300 leading-relaxed">
-                            To become India’s leading integrated green industrial transformation partner, setting benchmarks for sustainability and innovation.
+                        {/* Gold left accent bar */}
+                        <div
+                            className="absolute left-0 top-0 bottom-0 w-0.5 transition-all duration-500"
+                            style={{ background: "var(--gold)", opacity: 0.6 }}
+                        />
+                        <div
+                            className="absolute left-0 top-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            style={{ background: "var(--gold)", boxShadow: "0 0 12px var(--gold)" }}
+                        />
+
+                        <p
+                            className="font-mono mb-6"
+                            style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--gold)", textTransform: "uppercase" }}
+                        >
+                            Our Vision
+                        </p>
+                        <h3
+                            className="font-heading mb-4"
+                            style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.2 }}
+                        >
+                            India's Leading Green Industrial Partner
+                        </h3>
+                        <p
+                            className="font-body text-sm"
+                            style={{ color: "var(--foreground-muted)", lineHeight: 1.85 }}
+                        >
+                            To become India's leading integrated green industrial transformation
+                            partner, setting benchmarks for sustainability and innovation across
+                            every sector we serve.
                         </p>
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
+                        initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/30 transition-colors"
+                        transition={{ duration: 0.65, delay: 0.15 }}
+                        className="group relative flex flex-col p-10 transition-all duration-400"
+                        style={{ background: "var(--surface-raised)" }}
                     >
-                        <h3 className="text-2xl font-bold font-heading mb-4 text-accent">Our Mission</h3>
-                        <p className="text-gray-300 leading-relaxed">
-                            To enable manufacturers and waste handlers to adopt scalable, commercially viable, and regulation-compliant green technologies while improving operational performance and product quality.
+                        {/* Teal left accent bar */}
+                        <div
+                            className="absolute left-0 top-0 bottom-0 w-0.5 transition-all duration-500"
+                            style={{ background: "var(--teal)", opacity: 0.6 }}
+                        />
+                        <div
+                            className="absolute left-0 top-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            style={{ background: "var(--teal)", boxShadow: "0 0 12px var(--teal)" }}
+                        />
+
+                        <p
+                            className="font-mono mb-6"
+                            style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--teal)", textTransform: "uppercase" }}
+                        >
+                            Our Mission
+                        </p>
+                        <h3
+                            className="font-heading mb-4"
+                            style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.2 }}
+                        >
+                            Enabling Scalable Green Technology Adoption
+                        </h3>
+                        <p
+                            className="font-body text-sm"
+                            style={{ color: "var(--foreground-muted)", lineHeight: 1.85 }}
+                        >
+                            To enable manufacturers and waste handlers to adopt scalable,
+                            commercially viable, and regulation-compliant green technologies —
+                            while improving operational performance and product quality.
                         </p>
                     </motion.div>
                 </div>

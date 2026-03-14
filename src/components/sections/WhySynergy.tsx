@@ -6,60 +6,171 @@ import { ShieldCheck, Settings, TrendingUp } from "lucide-react";
 const features = [
     {
         title: "Regulatory Expertise",
-        description: "Deep understanding of PESO, FSSAI, and environmental compliance standards.",
+        description:
+            "Deep understanding of PESO, FSSAI, and environmental compliance standards — so your operations stay ahead of the curve.",
         icon: ShieldCheck,
     },
     {
         title: "End-to-End Engineering",
-        description: "From concept and feasibility to commissioning and lifecycle support.",
+        description:
+            "From concept and feasibility studies to full commissioning and lifecycle support — one partner, every phase.",
         icon: Settings,
     },
     {
         title: "Scalable Deployment",
-        description: "Modular systems designed to grow with your industrial requirements.",
+        description:
+            "Modular systems engineered to grow with your industrial requirements without costly overhauls.",
         icon: TrendingUp,
     },
 ];
 
 export function WhySynergy() {
     return (
-        <section className="py-24 bg-background">
-            <div className="container px-4 md:px-6 mx-auto">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="py-32 relative overflow-hidden" style={{ background: "var(--background)" }}>
+            {/* Decorative glow */}
+            <div
+                className="absolute right-0 top-1/2 -translate-y-1/2 animate-pulse-glow pointer-events-none"
+                style={{
+                    width: "500px",
+                    height: "500px",
+                    background: "radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",
+                    filter: "blur(60px)",
+                    zIndex: 0,
+                }}
+            />
+
+            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    {/* Left: text */}
                     <div>
-                        <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-6">
-                            Why Partner with <span className="text-primary">Synergy</span>?
-                        </h2>
-                        <p className="text-lg text-gray-400 mb-8">
-                            We combine technical innovation with strict regulatory adherence to deliver industrial solutions that are safe, efficient, and future-proof.
-                        </p>
+                        <motion.p
+                            className="label-mono section-tag mb-6"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            Why Partner With Us
+                        </motion.p>
+
+                        <motion.h2
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7 }}
+                            className="font-heading mb-4"
+                            style={{
+                                fontSize: "clamp(2.4rem, 4.5vw, 4rem)",
+                                fontWeight: 300,
+                                lineHeight: 1.1,
+                            }}
+                        >
+                            Why Partner with{" "}
+                            <span className="text-gradient-gold" style={{ fontWeight: 600 }}>
+                                Synergy
+                            </span>
+                            ?
+                        </motion.h2>
+
+                        {/* Animated gold rule */}
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "5rem" }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="h-px mb-8"
+                            style={{ background: "var(--gold)" }}
+                        />
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="font-body mb-12 text-sm md:text-base"
+                            style={{ color: "var(--foreground-muted)", lineHeight: 1.85 }}
+                        >
+                            We combine technical innovation with strict regulatory adherence to
+                            deliver industrial solutions that are safe, efficient, and future-proof
+                            — built for India's industrial evolution.
+                        </motion.p>
+
+                        {/* Feature items */}
                         <div className="space-y-8">
-                            {features.map((feature, index) => (
-                                <div key={index} className="flex gap-4">
-                                    <div className="flex-shrink-0">
-                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                            <feature.icon className="w-6 h-6" />
-                                        </div>
+                            {features.map((feature, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: i * 0.15 }}
+                                    className="feature-item"
+                                >
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <feature.icon
+                                            className="w-4 h-4 flex-shrink-0"
+                                            style={{ color: "var(--gold)" }}
+                                            strokeWidth={1.5}
+                                        />
+                                        <h4
+                                            className="font-heading"
+                                            style={{ fontSize: "1.2rem", fontWeight: 600 }}
+                                        >
+                                            {feature.title}
+                                        </h4>
                                     </div>
-                                    <div>
-                                        <h4 className="text-xl font-bold text-white mb-2">{feature.title}</h4>
-                                        <p className="text-gray-400">{feature.description}</p>
-                                    </div>
-                                </div>
+                                    <p
+                                        className="font-body text-sm"
+                                        style={{ color: "var(--foreground-muted)", lineHeight: 1.8 }}
+                                    >
+                                        {feature.description}
+                                    </p>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
-                    <div className="relative">
-                        {/* Abstract visual representation */}
-                        <div className="aspect-square rounded-2xl bg-secondary/20 border border-white/10 relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10 duration-500" />
+
+                    {/* Right: Image with diagonal clip */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
+                        className="relative"
+                    >
+                        <div
+                            className="relative overflow-hidden"
+                            style={{
+                                clipPath: "polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%)",
+                                aspectRatio: "4/5",
+                            }}
+                        >
                             <img
                                 src="/images/why-synergy.jpg"
-                                alt="Synergy Innovation Molecule"
-                                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700"
+                                alt="Synergy Innovation"
+                                className="object-cover w-full h-full"
+                                style={{ transform: "scale(1.05)" }}
+                            />
+                            {/* Gold tint overlay */}
+                            <div
+                                className="absolute inset-0"
+                                style={{
+                                    background:
+                                        "linear-gradient(135deg, rgba(201,168,76,0.15) 0%, transparent 60%)",
+                                }}
                             />
                         </div>
-                    </div>
+
+                        {/* Decorative frame lines */}
+                        <div
+                            className="absolute -top-4 -right-4 w-24 h-24 border-t border-r pointer-events-none"
+                            style={{ borderColor: "var(--gold)", opacity: 0.4 }}
+                        />
+                        <div
+                            className="absolute -bottom-4 -left-4 w-24 h-24 border-b border-l pointer-events-none"
+                            style={{ borderColor: "var(--gold)", opacity: 0.4 }}
+                        />
+                    </motion.div>
                 </div>
             </div>
         </section>

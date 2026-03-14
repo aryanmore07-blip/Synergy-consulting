@@ -1,22 +1,31 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Cormorant_Garamond, DM_Mono, Lato } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-cormorant",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const outfit = Outfit({
+const dmMono = DM_Mono({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-dm-mono",
   display: "swap",
+  weight: ["300", "400", "500"],
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  variable: "--font-lato",
+  display: "swap",
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Synergy Consulting & Solutions",
-  description: "Leading integrated green industrial transformation partner.",
+  description: "Leading integrated green industrial transformation partner — Hydrogen, Waste-to-Energy, and Industrial Innovation.",
 };
 
 export default function RootLayout({
@@ -27,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased bg-background text-foreground`}
+        className={`${cormorant.variable} ${dmMono.variable} ${lato.variable} antialiased bg-background text-foreground`}
       >
         {children}
       </body>

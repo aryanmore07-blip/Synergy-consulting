@@ -1,6 +1,3 @@
-
-
-
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -23,23 +20,49 @@ export function SolutionLayout({
     children,
 }: SolutionLayoutProps) {
     return (
-        <div className="min-h-screen bg-background text-foreground">
+        <div className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)" }}>
             {/* Hero Header */}
-            <section className="bg-secondary py-20 border-b border-white/5">
-                <div className="container px-4 md:px-6 mx-auto">
-                    <Link href="/#solutions" className="inline-flex items-center text-sm text-gray-400 hover:text-white mb-8 transition-colors">
-                        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
+            <section
+                className="py-28 border-b relative overflow-hidden"
+                style={{
+                    background: "var(--surface)",
+                    borderColor: "var(--border)",
+                }}
+            >
+                {/* Gold top accent */}
+                <div
+                    className="absolute top-0 left-0 right-0 h-px"
+                    style={{ background: "linear-gradient(to right, transparent, var(--gold) 30%, var(--gold) 70%, transparent)", opacity: 0.5 }}
+                />
+
+                <div className="max-w-7xl mx-auto px-6 md:px-10">
+                    <Link
+                        href="/#solutions"
+                        className="inline-flex items-center gap-2 mb-12 font-mono transition-colors duration-200"
+                        style={{ fontSize: "0.7rem", letterSpacing: "0.12em", color: "var(--foreground-muted)", textTransform: "uppercase" }}
+                    >
+                        <ArrowLeft className="w-3.5 h-3.5" />
+                        Back to Solutions
                     </Link>
 
                     <div className="flex flex-col md:flex-row gap-8 items-start">
-                        <div className="p-4 rounded-xl bg-primary/10 text-primary">
-                            <Icon className="w-12 h-12" />
+                        <div
+                            className="p-5 border"
+                            style={{ borderColor: "var(--border-gold)", background: "var(--gold-dim)", color: "var(--gold)" }}
+                        >
+                            <Icon className="w-10 h-10" strokeWidth={1.5} />
                         </div>
                         <div>
-                            <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-4">
+                            <h1
+                                className="font-heading mb-4"
+                                style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 300 }}
+                            >
                                 {title}
                             </h1>
-                            <p className="text-xl text-gray-400 max-w-2xl">
+                            <p
+                                className="font-body"
+                                style={{ color: "var(--foreground-muted)", maxWidth: "600px", lineHeight: 1.8 }}
+                            >
                                 {description}
                             </p>
                         </div>
@@ -47,49 +70,92 @@ export function SolutionLayout({
                 </div>
             </section>
 
-            <div className="container px-4 md:px-6 mx-auto py-12 grid lg:grid-cols-3 gap-12">
+            <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 grid lg:grid-cols-3 gap-12">
                 {/* Main Content */}
                 <div className="lg:col-span-2 space-y-12">
                     {children}
                 </div>
 
                 {/* Sidebar */}
-                <div className="space-y-8">
+                <div className="space-y-6">
                     {/* Key Features */}
-                    <div className="bg-secondary/50 rounded-xl p-6 border border-white/5">
-                        <h3 className="text-lg font-bold font-heading text-white mb-4">Key Features</h3>
+                    <div
+                        className="p-6 border"
+                        style={{ background: "var(--surface-raised)", borderColor: "var(--border)" }}
+                    >
+                        <p
+                            className="font-mono mb-5"
+                            style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "var(--gold)", textTransform: "uppercase" }}
+                        >
+                            Key Features
+                        </p>
                         <ul className="space-y-3">
-                            {features.map((feature, index) => (
-                                <li key={index} className="flex items-start text-gray-300 text-sm">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0" />
+                            {features.map((feature, i) => (
+                                <li key={i} className="flex items-start gap-3 font-body text-sm" style={{ color: "var(--foreground-muted)" }}>
+                                    <span
+                                        className="mt-2 flex-shrink-0 w-1 h-1 rounded-full"
+                                        style={{ background: "var(--gold)" }}
+                                    />
                                     {feature}
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Specifications */}
-                    <div className="bg-secondary/50 rounded-xl p-6 border border-white/5">
-                        <h3 className="text-lg font-bold font-heading text-white mb-4">Technical Specs</h3>
+                    {/* Technical Specs */}
+                    <div
+                        className="p-6 border"
+                        style={{ background: "var(--surface-raised)", borderColor: "var(--border)" }}
+                    >
+                        <p
+                            className="font-mono mb-5"
+                            style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "var(--gold)", textTransform: "uppercase" }}
+                        >
+                            Technical Specs
+                        </p>
                         <div className="space-y-4">
-                            {specs.map((spec, index) => (
-                                <div key={index} className="flex justify-between items-center text-sm border-b border-white/5 pb-2 last:border-0 last:pb-0">
-                                    <span className="text-gray-400">{spec.label}</span>
-                                    <span className="text-white font-medium text-right">{spec.value}</span>
+                            {specs.map((spec, i) => (
+                                <div
+                                    key={i}
+                                    className="flex justify-between items-center text-sm pb-3 border-b last:border-0 last:pb-0"
+                                    style={{ borderColor: "var(--border)" }}
+                                >
+                                    <span className="font-mono" style={{ fontSize: "0.7rem", color: "var(--foreground-muted)" }}>{spec.label}</span>
+                                    <span className="font-body font-medium text-right" style={{ color: "var(--foreground)" }}>{spec.value}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
                     {/* CTA */}
-                    <div className="bg-primary rounded-xl p-6 text-center">
-                        <h3 className="text-lg font-bold font-heading text-white mb-2">Ready to implement?</h3>
-                        <p className="text-white/80 text-sm mb-6">
-                            Get in touch with our engineering team for a custom proposal.
+                    <div
+                        className="p-6 text-center relative overflow-hidden"
+                        style={{
+                            background: "linear-gradient(135deg, rgba(201,168,76,0.15) 0%, rgba(201,168,76,0.05) 100%)",
+                            border: "1px solid var(--border-gold)",
+                        }}
+                    >
+                        <p
+                            className="font-mono mb-2"
+                            style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "var(--gold)", textTransform: "uppercase" }}
+                        >
+                            Ready to implement?
                         </p>
-                        <Button className="w-full bg-white text-primary hover:bg-gray-100">
+                        <h3
+                            className="font-heading mb-4"
+                            style={{ fontSize: "1.5rem", fontWeight: 500 }}
+                        >
+                            Get a Custom Proposal
+                        </h3>
+                        <p
+                            className="font-body text-sm mb-6"
+                            style={{ color: "var(--foreground-muted)" }}
+                        >
+                            Our engineering team will tailor a solution to your requirements.
+                        </p>
+                        <a href="/#about" className="btn-gold w-full block">
                             Request Consultation
-                        </Button>
+                        </a>
                     </div>
                 </div>
             </div>

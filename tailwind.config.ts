@@ -10,25 +10,45 @@ const config: Config = {
         extend: {
             colors: {
                 background: "var(--background)",
+                surface: "var(--surface)",
+                "surface-raised": "var(--surface-raised)",
                 foreground: "var(--foreground)",
+                "foreground-muted": "var(--foreground-muted)",
+                gold: {
+                    DEFAULT: "#C9A84C",
+                    light: "#E8C97A",
+                    dim: "rgba(201,168,76,0.13)",
+                },
+                teal: {
+                    DEFAULT: "#0D9488",
+                    dim: "rgba(13,148,136,0.13)",
+                },
+                // Keep legacy for any lingering class usage
                 primary: {
-                    DEFAULT: "#007BFF", // Hydrogen Blue
-                    foreground: "#FFFFFF",
+                    DEFAULT: "#C9A84C",
+                    foreground: "#0A0B0F",
                 },
                 secondary: {
-                    DEFAULT: "#2C2F33", // Soft Steel Grey
-                    foreground: "#FFFFFF",
+                    DEFAULT: "#0D0E13",
+                    foreground: "#F5F0E8",
                 },
                 accent: {
-                    DEFAULT: "#16A34A", // Eco Green
-                    foreground: "#FFFFFF",
+                    DEFAULT: "#0D9488",
+                    foreground: "#F5F0E8",
                 },
-                "industrial-charcoal": "#111417",
-                "off-white": "#F4F4F4",
             },
             fontFamily: {
-                sans: ["var(--font-inter)", "sans-serif"],
-                heading: ["var(--font-outfit)", "sans-serif"],
+                heading: ["var(--font-cormorant)", "serif"],
+                mono:    ["var(--font-dm-mono)", "monospace"],
+                body:    ["var(--font-lato)", "sans-serif"],
+                sans:    ["var(--font-lato)", "sans-serif"],
+            },
+            animation: {
+                'float': 'float 7s ease-in-out infinite',
+                'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+                'shimmer': 'shimmer 3s linear infinite',
+                'fade-up': 'fade-up 0.7s ease forwards',
+                'marquee': 'marquee 30s linear infinite',
             },
         },
     },
