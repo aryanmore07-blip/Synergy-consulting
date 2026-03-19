@@ -26,25 +26,25 @@ const features = [
 
 export function WhySynergy() {
     return (
-        <section className="py-32 relative overflow-hidden" style={{ background: "var(--background)" }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: "var(--background)" }}>
             {/* Decorative glow */}
             <div
-                className="absolute right-0 top-1/2 -translate-y-1/2 animate-pulse-glow pointer-events-none"
+                className="absolute right-0 top-1/2 -translate-y-1/2 animate-pulse-glow pointer-events-none hidden sm:block"
                 style={{
-                    width: "500px",
-                    height: "500px",
+                    width: "400px",
+                    height: "400px",
                     background: "radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",
                     filter: "blur(60px)",
                     zIndex: 0,
                 }}
             />
 
-            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-10 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Left: text */}
                     <div>
                         <motion.p
-                            className="label-mono section-tag mb-6"
+                            className="label-mono section-tag mb-5"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
@@ -60,7 +60,7 @@ export function WhySynergy() {
                             transition={{ duration: 0.7 }}
                             className="font-heading mb-4"
                             style={{
-                                fontSize: "clamp(2.4rem, 4.5vw, 4rem)",
+                                fontSize: "clamp(2rem, 5vw, 4rem)",
                                 fontWeight: 300,
                                 lineHeight: 1.1,
                             }}
@@ -75,10 +75,10 @@ export function WhySynergy() {
                         {/* Animated gold rule */}
                         <motion.div
                             initial={{ width: 0 }}
-                            whileInView={{ width: "5rem" }}
+                            whileInView={{ width: "4rem" }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="h-px mb-8"
+                            className="h-px mb-6 md:mb-8"
                             style={{ background: "var(--gold)" }}
                         />
 
@@ -87,7 +87,7 @@ export function WhySynergy() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="font-body mb-12 text-sm md:text-base"
+                            className="font-body mb-10 text-sm md:text-base"
                             style={{ color: "var(--foreground-muted)", lineHeight: 1.85 }}
                         >
                             We combine technical innovation with strict regulatory adherence to
@@ -96,7 +96,7 @@ export function WhySynergy() {
                         </motion.p>
 
                         {/* Feature items */}
-                        <div className="space-y-8">
+                        <div className="space-y-7">
                             {features.map((feature, i) => (
                                 <motion.div
                                     key={i}
@@ -114,7 +114,7 @@ export function WhySynergy() {
                                         />
                                         <h4
                                             className="font-heading"
-                                            style={{ fontSize: "1.2rem", fontWeight: 600 }}
+                                            style={{ fontSize: "clamp(1.05rem, 2vw, 1.2rem)", fontWeight: 600 }}
                                         >
                                             {feature.title}
                                         </h4>
@@ -130,13 +130,13 @@ export function WhySynergy() {
                         </div>
                     </div>
 
-                    {/* Right: Image with diagonal clip */}
+                    {/* Right: Image — shown on lg+, stacked below on mobile */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className="relative"
+                        className="relative hidden lg:block"
                     >
                         <div
                             className="relative overflow-hidden"
@@ -146,30 +146,49 @@ export function WhySynergy() {
                             }}
                         >
                             <img
-                                src="/images/why-synergy.jpg"
+                                src="/images/why-synergy.png"
                                 alt="Synergy Innovation"
                                 className="object-cover w-full h-full"
                                 style={{ transform: "scale(1.05)" }}
                             />
-                            {/* Gold tint overlay */}
                             <div
                                 className="absolute inset-0"
                                 style={{
-                                    background:
-                                        "linear-gradient(135deg, rgba(201,168,76,0.15) 0%, transparent 60%)",
+                                    background: "linear-gradient(135deg, rgba(201,168,76,0.15) 0%, transparent 60%)",
                                 }}
                             />
                         </div>
 
-                        {/* Decorative frame lines */}
+                        {/* Decorative corner frames */}
                         <div
-                            className="absolute -top-4 -right-4 w-24 h-24 border-t border-r pointer-events-none"
+                            className="absolute -top-4 -right-4 w-20 h-20 border-t border-r pointer-events-none"
                             style={{ borderColor: "var(--gold)", opacity: 0.4 }}
                         />
                         <div
-                            className="absolute -bottom-4 -left-4 w-24 h-24 border-b border-l pointer-events-none"
+                            className="absolute -bottom-4 -left-4 w-20 h-20 border-b border-l pointer-events-none"
                             style={{ borderColor: "var(--gold)", opacity: 0.4 }}
                         />
+                    </motion.div>
+
+                    {/* Mobile image — no clip path, simple rounded */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7 }}
+                        className="relative lg:hidden"
+                    >
+                        <div className="relative overflow-hidden rounded-sm" style={{ aspectRatio: "16/9" }}>
+                            <img
+                                src="/images/why-synergy.png"
+                                alt="Synergy Innovation"
+                                className="object-cover w-full h-full"
+                            />
+                            <div
+                                className="absolute inset-0"
+                                style={{ background: "linear-gradient(135deg, rgba(201,168,76,0.12) 0%, transparent 60%)" }}
+                            />
+                        </div>
                     </motion.div>
                 </div>
             </div>

@@ -9,12 +9,10 @@ const footerLinks = {
     ],
     Company: [
         { label: "About Us", href: "/#about" },
-        { label: "Careers", href: "#" },
-        { label: "Contact", href: "#" },
+        { label: "Our Team", href: "/team" },
     ],
     Connect: [
-        { label: "LinkedIn", href: "#" },
-        { label: "Twitter", href: "#" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/rajesh-belgaonkar-9ab6846/" },
     ],
 };
 
@@ -33,18 +31,18 @@ export function Footer() {
                 }}
             />
 
-            <div className="max-w-7xl mx-auto px-6 md:px-10 py-20">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-10 py-14 md:py-20">
                 {/* Large centered wordmark */}
-                <div className="text-center mb-16">
-                    <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="text-center mb-12 md:mb-16">
+                    <div className="flex items-center justify-center gap-3 md:gap-4 mb-4">
                         <div
-                            className="w-px h-12"
+                            className="w-px h-8 md:h-12"
                             style={{ background: "linear-gradient(to bottom, transparent, var(--gold))" }}
                         />
                         <h2
                             className="font-heading text-gradient-gold"
                             style={{
-                                fontSize: "clamp(3rem, 7vw, 6rem)",
+                                fontSize: "clamp(2.5rem, 8vw, 6rem)",
                                 fontWeight: 300,
                                 letterSpacing: "0.2em",
                                 lineHeight: 1,
@@ -54,28 +52,25 @@ export function Footer() {
                             Synergy
                         </h2>
                         <div
-                            className="w-px h-12"
+                            className="w-px h-8 md:h-12"
                             style={{ background: "linear-gradient(to bottom, transparent, var(--gold))" }}
                         />
                     </div>
                     <p
-                        className="font-mono mx-auto"
-                        style={{ fontSize: "0.65rem", letterSpacing: "0.25em", color: "var(--foreground-muted)", textTransform: "uppercase" }}
+                        className="font-mono mx-auto px-4"
+                        style={{ fontSize: "clamp(0.55rem, 1.5vw, 0.65rem)", letterSpacing: "0.2em", color: "var(--foreground-muted)", textTransform: "uppercase" }}
                     >
                         Consulting & Solutions · Green Industrial Transformation
                     </p>
                 </div>
 
                 {/* Thin separator */}
-                <div
-                    className="w-full h-px mb-16"
-                    style={{ background: "var(--border)" }}
-                />
+                <div className="w-full h-px mb-10 md:mb-16" style={{ background: "var(--border)" }} />
 
-                {/* Link columns */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
-                    {/* Tagline column */}
-                    <div>
+                {/* Link columns — 2 cols on mobile, 4 on md */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12 md:mb-16">
+                    {/* Tagline column — hidden on mobile to save space */}
+                    <div className="hidden md:block">
                         <p
                             className="font-mono mb-4"
                             style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "var(--gold)", textTransform: "uppercase" }}
@@ -123,12 +118,12 @@ export function Footer() {
 
                 {/* Bottom bar */}
                 <div
-                    className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t"
+                    className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t text-center sm:text-left"
                     style={{ borderColor: "var(--border)" }}
                 >
                     <p
                         className="font-mono"
-                        style={{ fontSize: "0.65rem", letterSpacing: "0.12em", color: "var(--foreground-muted)", textTransform: "uppercase" }}
+                        style={{ fontSize: "0.6rem", letterSpacing: "0.1em", color: "var(--foreground-muted)", textTransform: "uppercase" }}
                     >
                         © {new Date().getFullYear()} Synergy Consulting & Solutions. All rights reserved.
                     </p>
@@ -139,7 +134,7 @@ export function Footer() {
                         />
                         <span
                             className="font-mono"
-                            style={{ fontSize: "0.6rem", letterSpacing: "0.12em", color: "var(--teal)", textTransform: "uppercase" }}
+                            style={{ fontSize: "0.58rem", letterSpacing: "0.1em", color: "var(--teal)", textTransform: "uppercase" }}
                         >
                             Committed to Green Industry
                         </span>

@@ -6,12 +6,12 @@ export function AboutSection() {
     return (
         <section
             id="about"
-            className="py-32 relative overflow-hidden"
+            className="py-20 md:py-32 relative overflow-hidden"
             style={{ background: "var(--background)" }}
         >
-            {/* Gold glow left */}
+            {/* Gold glow */}
             <div
-                className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none animate-pulse-glow"
+                className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none animate-pulse-glow hidden sm:block"
                 style={{
                     width: "400px",
                     height: "400px",
@@ -20,23 +20,22 @@ export function AboutSection() {
                 }}
             />
 
-            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-10 relative z-10">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="text-center mb-20"
+                    className="text-center mb-12 md:mb-20"
                 >
                     <p className="label-mono section-tag mb-4">Our Identity</p>
                     <h2
                         className="font-heading mx-auto"
                         style={{
-                            fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+                            fontSize: "clamp(2.2rem, 6vw, 4.5rem)",
                             fontWeight: 300,
                             lineHeight: 1.1,
-                            maxWidth: "700px",
                         }}
                     >
                         About{" "}
@@ -48,10 +47,10 @@ export function AboutSection() {
                     {/* Animated divider */}
                     <motion.div
                         initial={{ width: 0 }}
-                        whileInView={{ width: "4rem" }}
+                        whileInView={{ width: "3.5rem" }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.9, delay: 0.2 }}
-                        className="h-px mx-auto mt-8 mb-8"
+                        className="h-px mx-auto mt-6 mb-6 md:mb-8"
                         style={{ background: "var(--gold)" }}
                     />
 
@@ -61,23 +60,26 @@ export function AboutSection() {
                     >
                         We are dedicated to enabling factories, waste handlers, and food
                         manufacturers to transition toward sustainable, regulation-compliant,
-                        and scalable green industrial practices — for a stronger industrial India.
+                        and scalable green industrial practices.
                     </p>
                 </motion.div>
 
-                {/* Vision / Mission — horizontal banner cards */}
-                <div className="grid md:grid-cols-2 gap-px" style={{ background: "var(--border)" }}>
+                {/* Vision / Mission */}
+                <div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-px"
+                    style={{ background: "var(--border)" }}
+                >
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.65 }}
-                        className="group relative flex flex-col p-10 transition-all duration-400"
+                        className="group relative flex flex-col p-7 sm:p-10 transition-all duration-400"
                         style={{ background: "var(--surface-raised)" }}
                     >
                         {/* Gold left accent bar */}
                         <div
-                            className="absolute left-0 top-0 bottom-0 w-0.5 transition-all duration-500"
+                            className="absolute left-0 top-0 bottom-0 w-0.5"
                             style={{ background: "var(--gold)", opacity: 0.6 }}
                         />
                         <div
@@ -86,14 +88,14 @@ export function AboutSection() {
                         />
 
                         <p
-                            className="font-mono mb-6"
+                            className="font-mono mb-5"
                             style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--gold)", textTransform: "uppercase" }}
                         >
                             Our Vision
                         </p>
                         <h3
                             className="font-heading mb-4"
-                            style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.2 }}
+                            style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 500, lineHeight: 1.2 }}
                         >
                             India's Leading Green Industrial Partner
                         </h3>
@@ -108,16 +110,16 @@ export function AboutSection() {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.65, delay: 0.15 }}
-                        className="group relative flex flex-col p-10 transition-all duration-400"
+                        transition={{ duration: 0.65, delay: 0.1 }}
+                        className="group relative flex flex-col p-7 sm:p-10 transition-all duration-400"
                         style={{ background: "var(--surface-raised)" }}
                     >
                         {/* Teal left accent bar */}
                         <div
-                            className="absolute left-0 top-0 bottom-0 w-0.5 transition-all duration-500"
+                            className="absolute left-0 top-0 bottom-0 w-0.5"
                             style={{ background: "var(--teal)", opacity: 0.6 }}
                         />
                         <div
@@ -126,14 +128,14 @@ export function AboutSection() {
                         />
 
                         <p
-                            className="font-mono mb-6"
+                            className="font-mono mb-5"
                             style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--teal)", textTransform: "uppercase" }}
                         >
                             Our Mission
                         </p>
                         <h3
                             className="font-heading mb-4"
-                            style={{ fontSize: "2rem", fontWeight: 500, lineHeight: 1.2 }}
+                            style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 500, lineHeight: 1.2 }}
                         >
                             Enabling Scalable Green Technology Adoption
                         </h3>
