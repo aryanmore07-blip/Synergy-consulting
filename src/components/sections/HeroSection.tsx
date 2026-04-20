@@ -17,26 +17,18 @@ export function HeroSection() {
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grain-overlay">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
-                <Image
-                    src="/images/hero-bg.jpg"
-                    alt="Industrial Innovation"
-                    fill
-                    className="object-cover"
-                    priority
-                    style={{ opacity: 0.35 }}
-                />
                 <div
                     className="absolute inset-0"
                     style={{
                         background:
-                            "radial-gradient(ellipse 80% 60% at 50% 40%, transparent 0%, rgba(10,11,15,0.6) 60%, rgba(10,11,15,0.97) 100%)",
+                            "radial-gradient(ellipse 80% 60% at 50% 40%, transparent 0%, rgba(250,249,247,0.6) 60%, rgba(250,249,247,0.97) 100%)",
                     }}
                 />
                 <div
                     className="absolute inset-0"
                     style={{
                         background:
-                            "linear-gradient(to bottom, rgba(10,11,15,0.5) 0%, transparent 30%, rgba(10,11,15,0.9) 85%, #0A0B0F 100%)",
+                            "linear-gradient(to bottom, rgba(250,249,247,0.5) 0%, transparent 30%, rgba(250,249,247,0.9) 85%, #FAF9F7 100%)",
                     }}
                 />
             </div>
@@ -49,7 +41,7 @@ export function HeroSection() {
                     height: "clamp(200px, 40vw, 520px)",
                     top: "10%",
                     left: "-8%",
-                    background: "radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(181,148,47,0.08) 0%, transparent 70%)",
                     filter: "blur(40px)",
                     animationDelay: "0s",
                     animationDuration: "9s",
@@ -63,7 +55,7 @@ export function HeroSection() {
                     height: "clamp(150px, 30vw, 400px)",
                     bottom: "15%",
                     right: "-5%",
-                    background: "radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(11,126,115,0.07) 0%, transparent 70%)",
                     filter: "blur(40px)",
                     animationDelay: "3s",
                     animationDuration: "11s",
@@ -143,7 +135,7 @@ export function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.8 }}
                     className="grid grid-cols-3 max-w-xs sm:max-w-sm md:max-w-xl mx-auto border-t"
-                    style={{ borderColor: "rgba(201,168,76,0.2)" }}
+                    style={{ borderColor: "rgba(181,148,47,0.25)" }}
                 >
                     {stats.map((stat, i) => (
                         <div
@@ -152,7 +144,7 @@ export function HeroSection() {
                             style={{
                                 borderRight:
                                     i < stats.length - 1
-                                        ? "1px solid rgba(201,168,76,0.2)"
+                                        ? "1px solid rgba(181,148,47,0.25)"
                                         : "none",
                             }}
                         >
@@ -178,30 +170,8 @@ export function HeroSection() {
                 </motion.div>
             </div>
 
-            {/* Scroll indicator — hidden on small screens */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.3, duration: 0.8 }}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 hidden sm:flex"
-                style={{ zIndex: 10 }}
-            >
-                <span
-                    className="font-mono"
-                    style={{ fontSize: "0.6rem", letterSpacing: "0.15em", color: "var(--foreground-muted)", textTransform: "uppercase" }}
-                >
-                    Scroll
-                </span>
-                <div
-                    className="w-px h-10 relative overflow-hidden"
-                    style={{ background: "rgba(201,168,76,0.15)" }}
-                >
-                    <div
-                        className="absolute top-0 left-0 w-full"
-                        style={{ height: "40%", background: "var(--gold)", animation: "float 2s ease-in-out infinite" }}
-                    />
-                </div>
-            </motion.div>
+
+
         </section>
     );
 }

@@ -5,6 +5,7 @@ import { SolutionsOverview } from "@/components/sections/SolutionsOverview";
 import { WhySynergy } from "@/components/sections/WhySynergy";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { ConsultancySection } from "@/components/sections/ConsultancySection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <SolutionsOverview />
+      <ConsultancySection />
       <WhySynergy />
       <IndustriesGrid />
       <AboutSection />

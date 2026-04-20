@@ -10,7 +10,7 @@ export default function FoodTechPage() {
     return (
         <SolutionLayout
             title="Food & Beverage Technology"
-            description="Enhancing shelf life, texture, and stability through advanced food chemistry and packaging innovation."
+            description="We support the supply of PEM fuel cell stacks and PEM fuel cell systems for clean energy and mobility applications. Our scope can cover standalone stacks, integrated system packages, and supporting components depending on project scale and application requirement."
             icon={Utensils}
             specs={[
                 { label: "Compliance", value: "FSSAI / Codex" },
@@ -25,24 +25,24 @@ export default function FoodTechPage() {
                 "Texture stabilization systems",
             ]}
         >
-            <div className="space-y-8 text-gray-300">
+            <div className="space-y-8" style={{ color: "var(--foreground-muted)" }}>
                 <section>
-                    <h2 className="text-2xl font-bold font-heading text-white mb-4">Overview</h2>
+                    <h2 className="text-2xl font-bold font-heading mb-4" style={{ color: "var(--foreground)" }}>Overview</h2>
                     <p>
-                        Our food technology division focuses on preserving quality and reducing waste. We offer FSSAI-compliant solutions for anti-caking in milk powders and spices, as well as next-generation packaging technologies that significantly extend shelf life.
+                        We support the supply of PEM fuel cell stacks and PEM fuel cell systems for clean energy and mobility applications. Our scope can cover standalone stacks, integrated system packages, and supporting components depending on project scale and application requirement.
                     </p>
                 </section>
 
                 <section>
-                    <h2 className="text-2xl font-bold font-heading text-white mb-4">Key Solutions</h2>
+                    <h2 className="text-2xl font-bold font-heading mb-4" style={{ color: "var(--foreground)" }}>PEM Offerings</h2>
                     <div className="grid gap-6 md:grid-cols-2">
-                        <div className="bg-white/5 p-4 rounded-lg">
-                            <h4 className="font-bold text-white mb-2">Anti-Caking</h4>
-                            <p className="text-sm">Preventing clumping in hygroscopic powders like milk, whey, and spice mixes.</p>
+                        <div className="p-4 rounded-lg" style={{ background: "var(--surface)" }}>
+                            <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>PEM Fuel Cell Stack</h4>
+                            <p className="text-sm">We facilitate supply of PEM fuel cell stacks, which form the core electrochemical unit for converting hydrogen into electrical power, aligned with application-specific output and integration requirements.</p>
                         </div>
-                        <div className="bg-white/5 p-4 rounded-lg">
-                            <h4 className="font-bold text-white mb-2">Smart Packaging</h4>
-                            <p className="text-sm">Barrier films and absorbers to protect against oxidation and moisture.</p>
+                        <div className="p-4 rounded-lg" style={{ background: "var(--surface)" }}>
+                            <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>PEM Fuel Cell System</h4>
+                            <p className="text-sm">We also support supply of integrated PEM fuel cell systems, including stack-based packaged units with associated control, thermal, and power management elements suited to end-use deployment.</p>
                         </div>
                     </div>
                 </section>

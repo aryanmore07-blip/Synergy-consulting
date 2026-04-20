@@ -15,6 +15,7 @@ const teamMembers = [
             "Hydrogen Fuel Cell"
         ],
         experience: "25+ years",
+        roleLine: "Marketing & Business Development",
         summary: "Seasoned marketing professional with extensive experience across diverse industrial sectors, specializing in emerging green technologies and strategic business development.",
         expertise: [
             {
@@ -60,6 +61,63 @@ const teamMembers = [
             }
         ],
         bio: "A forward-thinking industry leader with over 25 years of marketing experience, bringing deep expertise across a diverse range of industrial sectors. Throughout a distinguished career, has successfully worked with industrial chemicals, refrigerant gases, flavors and fragrances, thermoplastic urethanes, pharmaceutical propellants, automobile lubricants, and industrial and specialty gases. Notable for conceptualizing and establishing an independent manufacturing unit for industrial gases, demonstrating exceptional ability to drive innovation and growth.\n\nIn a unique accomplishment, successfully united competitors in the field of industrial chemicals, fostering a cohesive body for mutual business benefits that was sustained for three years, highlighting exceptional strategic skills in building collaborative relationships.\n\nPossesses comprehensive knowledge of key regulatory aspects including Sales Tax, Excise, GST, Labor laws, Factory Act, and Gas Cylinder Rules, ensuring compliance and operational excellence.\n\nAs a forward-thinker, constantly explores new business opportunities and avenues for growth. Currently actively engaged in emerging markets and technologies including Biogas, BioCNG, Hydrogen, Hydrogen Fuel Stations, and Fuel Cell businesses, aligning expertise with the forefront of industry innovation and driving businesses towards new horizons.",
+    },
+    {
+        name: "Rajesh Parekh",
+        location: "Pune, Maharashtra, India",
+        specializations: [
+            "Snacks & Mithai Manufacturing",
+            "Production & Operations",
+            "Food Business Consulting"
+        ],
+        experience: "45+ years",
+        roleLine: "Food Production, Operations & Business Consulting",
+        summary: "Seasoned food industry entrepreneur with over 45 years of hands-on experience in building and scaling a successful snacks, mithai, and dry fruits business.",
+        expertise: [
+            {
+                title: "Industry Experience",
+                items: [
+                    "Founder of Bhavnagri, a trusted brand known for quality and consistency",
+                    "Built and managed a well-recognized snacks, mithai, and dry fruits business",
+                    "Led end-to-end operations including production, quality control, and distribution",
+                    "Developed high-quality product lines with consistent taste and customer appeal"
+                ]
+            },
+            {
+                title: "Key Skills",
+                items: [
+                    "Food production and manufacturing",
+                    "Mithai and namkeen expertise",
+                    "Product development",
+                    "Quality control and food safety",
+                    "Supply chain and procurement",
+                    "Team leadership and training",
+                    "Cost optimization and budgeting",
+                    "Vendor negotiation",
+                    "Operations management"
+                ]
+            },
+            {
+                title: "Consulting Interests",
+                items: [
+                    "Setting up Namkeen and Mithai manufacturing units",
+                    "Production process optimization",
+                    "Quality control systems",
+                    "Cost reduction strategies",
+                    "Scaling food businesses"
+                ]
+            },
+            {
+                title: "Languages",
+                items: [
+                    "English",
+                    "Hindi",
+                    "Gujarati",
+                    "Marathi"
+                ]
+            }
+        ],
+        bio: "Seasoned food industry entrepreneur with over 45 years of hands-on experience in building and scaling a successful snacks, mithai, and dry fruits business. Founder of Bhavnagri, a trusted brand known for quality, authenticity, and consistency.\n\nExpertise spans production management, product development, supply chain optimization, and business operations. Known for combining traditional taste with modern processes to drive growth and customer satisfaction.\n\nNow open to consulting and advisory roles in food manufacturing, helping businesses set up efficient production systems, improve quality, optimize costs, and scale sustainably.",
     }
 ];
 
@@ -76,7 +134,7 @@ export default function TeamPage() {
                     style={{
                         width: "800px",
                         height: "600px",
-                        background: "radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%)",
+                        background: "radial-gradient(circle, rgba(181,148,47,0.05) 0%, transparent 70%)",
                         filter: "blur(80px)",
                     }}
                 />
@@ -184,7 +242,7 @@ export default function TeamPage() {
                                                     className="font-body text-sm"
                                                     style={{ color: "var(--foreground-muted)" }}
                                                 >
-                                                    {member.experience} in Marketing & Business Development
+                                                    {member.experience} in {member.roleLine}
                                                 </span>
                                             </div>
                                         </div>

@@ -101,7 +101,7 @@ export function Footer() {
                                             className="group font-body text-sm relative inline-flex"
                                             style={{ color: "var(--foreground-muted)" }}
                                         >
-                                            <span className="transition-colors duration-200 group-hover:text-white">
+                                            <span className="transition-colors duration-200 group-hover:text-foreground">
                                                 {link.label}
                                             </span>
                                             <span

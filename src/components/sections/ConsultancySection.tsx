@@ -4,58 +4,58 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap, Droplets, Recycle, Utensils, BarChart3 } from "lucide-react";
 import Link from "next/link";
 
-const solutions = [
+const consultancy = [
     {
         index: "01",
-        title: "Supply of plant related to waste-to-energy",
+        title: "Waste to Energy",
         description:
-            "Bio-Gas plant. Refining of Bio-Gas. CO2 plant. CNG/CBG plant. Hydrogen & Black Carbon Plant.",
+            "Consultancy for integrated Waste-to-Energy systems that convert organic feedstock into renewable gas, hydrogen, and carbon co-products. Coverage includes biogas generation, gas upgrading, and downstream clean-fuel pathways.",
         icon: Recycle,
-        href: "/solutions/waste-to-energy",
+        href: "/consultancy/waste-to-energy",
         accentColor: "var(--gold)",
     },
     {
         index: "02",
-        title: "Supply of Hydrogen Plant",
+        title: "Manufacturing of Hydrogen",
         description:
-            "SMR plant. Electrolysis Plant. Pyrolysis Plant.",
+            "Consultancy for hydrogen projects across electrolysis, steam methane reforming, and methane pyrolysis pathways. We support route selection, sizing, utilities, and integration planning for practical deployment.",
         icon: Zap,
-        href: "/solutions/hydrogen",
+        href: "/consultancy/manufacturing-of-hydrogen",
         accentColor: "var(--gold)",
     },
     {
         index: "03",
-        title: "Supply of fuel cell",
+        title: "Industrial Gas Bottling Plant",
         description:
-            "PEM fuel cell Stack. PEM fuel cell System.",
-        icon: Utensils,
-        href: "/solutions/food-tech",
+            "End-to-end advisory for industrial gas bottling facilities, from site assessment and planning to approvals and system configuration. Includes manifold and gas-mixer panel planning for speciality gases.",
+        icon: Droplets,
+        href: "/consultancy/industrial-gas-bottling-plant",
         accentColor: "var(--gold)",
     },
     {
         index: "04",
-        title: "Gas Bottling Plant",
+        title: "Sweets Manufacturing",
         description:
-            "Cryogenic Tanks. Cryogenic Pumps. Gas Mixers. Vaporiser. Manifold System. Vacuum Pump. Cylinders. Gas Control Equipment (Regulators, Flow meters, Mass Flow Meters).",
-        icon: Droplets,
-        href: "/solutions/additives",
+            "Consultancy for establishing Namkeen and Mithai units with the right product mix, process standardization, and efficient plant setup. We also guide packaging strategy for market readiness and shelf performance.",
+        icon: Utensils,
+        href: "/consultancy/sweets-manufacturing",
         accentColor: "var(--gold)",
     },
     {
         index: "05",
-        title: "Gas Generator",
+        title: "Cost Cutting in Procurement",
         description:
-            "Nitrogen Gas generator. Ozone Generator. Liquid Nitrogen Generator. Hydrogen Generator.",
+            "Targeted procurement consultancy to validate current buying patterns and identify stronger supply options across engineering goods, chemicals, gases, and raw materials. Focused on practical savings without compromising quality or continuity.",
         icon: BarChart3,
-        href: "/solutions/procurement-optimization",
+        href: "/consultancy/cost-cutting-in-procurement",
         accentColor: "var(--gold)",
     },
 ];
 
-export function SolutionsOverview() {
+export function ConsultancySection() {
     return (
         <section
-            id="solutions"
+            id="consultancy"
             className="py-20 md:py-32 relative overflow-hidden"
             style={{ background: "var(--surface)" }}
         >
@@ -77,7 +77,7 @@ export function SolutionsOverview() {
                     transition={{ duration: 0.7 }}
                     className="mb-12 md:mb-20"
                 >
-                    <p className="label-mono mb-4 section-tag">Our Solutions</p>
+                    <p className="label-mono mb-4 section-tag">Consultancy</p>
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6">
                         <h2
                             className="font-heading"
@@ -89,14 +89,14 @@ export function SolutionsOverview() {
                         >
                             Integrated Industrial{" "}
                             <span className="text-gradient-gold" style={{ fontWeight: 600 }}>
-                                Solutions
+                                Consultancy
                             </span>
                         </h2>
                         <p
                             className="font-body text-sm md:max-w-xs"
                             style={{ color: "var(--foreground-muted)" }}
                         >
-                            Cutting-edge technology across critical industrial verticals — engineered for scale and compliance.
+                            Expert guidance and solutions for industrial innovation, efficiency, and growth.
                         </p>
                     </div>
 
@@ -107,12 +107,12 @@ export function SolutionsOverview() {
                     />
                 </motion.div>
 
-                {/* Solution cards */}
+                {/* Consultancy cards */}
                 <div
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
                     style={{ background: "var(--border)" }}
                 >
-                    {solutions.map((s, i) => (
+                    {consultancy.map((s, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 32 }}

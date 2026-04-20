@@ -11,7 +11,7 @@ export default function HydrogenPage() {
     return (
         <SolutionLayout
             title="Hydrogen & Clean Energy"
-            description="Advanced PEM and Alkaline electrolysis systems for industrial-grade green hydrogen production."
+            description="We support the supply of hydrogen plant systems, skids, and selected equipment packages across major hydrogen production routes. Our offering is aligned with project requirements for conventional as well as emerging hydrogen technologies."
             icon={Zap}
             specs={[
                 { label: "Purity", value: ">99.999%" },
@@ -26,26 +26,24 @@ export default function HydrogenPage() {
                 "Automated leak detection and safety interlocks",
             ]}
         >
-            <div className="space-y-8 text-gray-300">
+            <div className="space-y-8" style={{ color: "var(--foreground-muted)" }}>
                 <section>
-                    <h2 className="text-2xl font-bold font-heading text-white mb-4">Overview</h2>
+                    <h2 className="text-2xl font-bold font-heading mb-4" style={{ color: "var(--foreground)" }}>Overview</h2>
                     <p>
-                        Our hydrogen generation systems are designed for maximizing efficiency and reliability in industrial environments.
-                        Whether you need on-site generation for chemical processing or a complete refueling station for mobility,
-                        Synergy provides end-to-end engineering support.
+                        We support the supply of hydrogen plant systems, skids, and selected equipment packages across major hydrogen production routes. Our offering is aligned with project requirements for conventional as well as emerging hydrogen technologies.
                     </p>
                 </section>
 
                 <section>
-                    <h2 className="text-2xl font-bold font-heading text-white mb-4">Applications</h2>
+                    <h2 className="text-2xl font-bold font-heading mb-4" style={{ color: "var(--foreground)" }}>Production Routes</h2>
                     <div className="grid gap-6 md:grid-cols-2">
-                        <div className="bg-white/5 p-4 rounded-lg">
-                            <h4 className="font-bold text-white mb-2">Industrial Feedstock</h4>
-                            <p className="text-sm">Replacing grey hydrogen in ammonia and methanol production with green alternatives.</p>
+                        <div className="p-4 rounded-lg" style={{ background: "var(--surface)" }}>
+                            <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>SMR Plant</h4>
+                            <p className="text-sm">Supply support for steam methane reforming plants includes process packages and associated system components required for methane-to-hydrogen conversion.</p>
                         </div>
-                        <div className="bg-white/5 p-4 rounded-lg">
-                            <h4 className="font-bold text-white mb-2">Mobility</h4>
-                            <p className="text-sm">Refueling infrastructure for FCEV fleets, including buses and heavy trucks.</p>
+                        <div className="p-4 rounded-lg" style={{ background: "var(--surface)" }}>
+                            <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>Electrolysis and Pyrolysis Plants</h4>
+                            <p className="text-sm">We support supply for electrolysis-based hydrogen plants and methane pyrolysis-based hydrogen sections, including equipment packages required for hydrogen generation and carbon co-product integration.</p>
                         </div>
                     </div>
                 </section>

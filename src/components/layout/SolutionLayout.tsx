@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -9,6 +8,8 @@ interface SolutionLayoutProps {
     specs: { label: string; value: string }[];
     features: string[];
     children: React.ReactNode;
+    backHref?: string;
+    backLabel?: string;
 }
 
 export function SolutionLayout({
@@ -18,6 +19,8 @@ export function SolutionLayout({
     specs,
     features,
     children,
+    backHref = "/#solutions",
+    backLabel = "Back to Solutions",
 }: SolutionLayoutProps) {
     return (
         <div className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)" }}>
@@ -37,12 +40,12 @@ export function SolutionLayout({
 
                 <div className="max-w-7xl mx-auto px-6 md:px-10">
                     <Link
-                        href="/#solutions"
+                        href={backHref}
                         className="inline-flex items-center gap-2 mb-12 font-mono transition-colors duration-200"
                         style={{ fontSize: "0.7rem", letterSpacing: "0.12em", color: "var(--foreground-muted)", textTransform: "uppercase" }}
                     >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        Back to Solutions
+                        {backLabel}
                     </Link>
 
                     <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -131,7 +134,7 @@ export function SolutionLayout({
                     <div
                         className="p-6 text-center relative overflow-hidden"
                         style={{
-                            background: "linear-gradient(135deg, rgba(201,168,76,0.15) 0%, rgba(201,168,76,0.05) 100%)",
+                            background: "linear-gradient(135deg, rgba(181,148,47,0.10) 0%, rgba(181,148,47,0.04) 100%)",
                             border: "1px solid var(--border-gold)",
                         }}
                     >

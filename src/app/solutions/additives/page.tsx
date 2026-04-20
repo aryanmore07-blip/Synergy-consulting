@@ -10,7 +10,7 @@ export default function AdditivesPage() {
     return (
         <SolutionLayout
             title="Industrial Additives"
-            description="Next-generation rheology modifiers, dispersants, and performance additives for the construction and coatings industries."
+            description="We support the supply of gas bottling plant systems, cryogenic equipment, filling accessories, gas mixing systems, and control instruments for industrial gas operations. The supply scope can include complete sections or individual equipment items depending on plant configuration."
             icon={Droplets}
             specs={[
                 { label: "Viscosity Control", value: "High Precision" },
@@ -25,24 +25,24 @@ export default function AdditivesPage() {
                 "Technical application support",
             ]}
         >
-            <div className="space-y-8 text-gray-300">
+            <div className="space-y-8" style={{ color: "var(--foreground-muted)" }}>
                 <section>
-                    <h2 className="text-2xl font-bold font-heading text-white mb-4">Overview</h2>
+                    <h2 className="text-2xl font-bold font-heading mb-4" style={{ color: "var(--foreground)" }}>Overview</h2>
                     <p>
-                        Synergy provides a comprehensive range of industrial additives designed to improve the performance, durability, and application properties of paints, coatings, and construction materials. Our material science division focuses on enhanced toughness and long-term sustainability.
+                        We support the supply of gas bottling plant systems, cryogenic equipment, filling accessories, gas mixing systems, and control instruments for industrial gas operations. The supply scope can include complete sections and individual equipment items depending on plant configuration.
                     </p>
                 </section>
 
                 <section>
-                    <h2 className="text-2xl font-bold font-heading text-white mb-4">Product Categories</h2>
+                    <h2 className="text-2xl font-bold font-heading mb-4" style={{ color: "var(--foreground)" }}>Equipment Scope</h2>
                     <div className="grid gap-6 md:grid-cols-2">
-                        <div className="bg-white/5 p-4 rounded-lg">
-                            <h4 className="font-bold text-white mb-2">Paints & Coatings</h4>
-                            <p className="text-sm">Dispersants and rheology modifiers for superior coverage and stability.</p>
+                        <div className="p-4 rounded-lg" style={{ background: "var(--surface)" }}>
+                            <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>Cryogenic Tanks and Cryogenic Pumps</h4>
+                            <p className="text-sm">Supply support includes cryogenic storage tanks and pumping systems for safe handling and transfer of industrial gases in liquid form.</p>
                         </div>
-                        <div className="bg-white/5 p-4 rounded-lg">
-                            <h4 className="font-bold text-white mb-2">Construction Chemicals</h4>
-                            <p className="text-sm">Admixtures for improved concrete strength, curing, and crack resistance.</p>
+                        <div className="p-4 rounded-lg" style={{ background: "var(--surface)" }}>
+                            <h4 className="font-bold mb-2" style={{ color: "var(--foreground)" }}>Gas Mixers, Vaporisers, Manifold Systems, Cylinders, and Controls</h4>
+                            <p className="text-sm">We facilitate supply of gas mixers, vaporisers, manifold systems, vacuum equipment, cylinders, regulators, flow meters, and mass flow meters required for gas transfer, filling operations, and controlled distribution.</p>
                         </div>
                     </div>
                 </section>

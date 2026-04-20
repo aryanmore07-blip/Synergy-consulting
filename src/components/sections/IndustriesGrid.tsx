@@ -73,7 +73,7 @@ export function IndustriesGrid() {
                             <div
                                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 style={{
-                                    background: "linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.04) 100%)",
+                                    background: "linear-gradient(135deg, rgba(181,148,47,0.06) 0%, rgba(181,148,47,0.03) 100%)",
                                 }}
                             />
 

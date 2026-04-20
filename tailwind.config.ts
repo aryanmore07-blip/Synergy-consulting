@@ -15,26 +15,26 @@ const config: Config = {
                 foreground: "var(--foreground)",
                 "foreground-muted": "var(--foreground-muted)",
                 gold: {
-                    DEFAULT: "#C9A84C",
-                    light: "#E8C97A",
-                    dim: "rgba(201,168,76,0.13)",
+                    DEFAULT: "#B5942F",
+                    light: "#C9A84C",
+                    dim: "rgba(181,148,47,0.08)",
                 },
                 teal: {
-                    DEFAULT: "#0D9488",
-                    dim: "rgba(13,148,136,0.13)",
+                    DEFAULT: "#0B7E73",
+                    dim: "rgba(11,126,115,0.08)",
                 },
                 // Keep legacy for any lingering class usage
                 primary: {
-                    DEFAULT: "#C9A84C",
-                    foreground: "#0A0B0F",
+                    DEFAULT: "#B5942F",
+                    foreground: "#FFFFFF",
                 },
                 secondary: {
-                    DEFAULT: "#0D0E13",
-                    foreground: "#F5F0E8",
+                    DEFAULT: "#F5F4F1",
+                    foreground: "#1A1A1A",
                 },
                 accent: {
-                    DEFAULT: "#0D9488",
-                    foreground: "#F5F0E8",
+                    DEFAULT: "#0B7E73",
+                    foreground: "#FFFFFF",
                 },
             },
             fontFamily: {

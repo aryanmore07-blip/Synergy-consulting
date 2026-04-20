@@ -15,7 +15,7 @@ export function AboutSection() {
                 style={{
                     width: "400px",
                     height: "400px",
-                    background: "radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(181,148,47,0.05) 0%, transparent 70%)",
                     filter: "blur(60px)",
                 }}
             />
@@ -84,7 +84,7 @@ export function AboutSection() {
                         />
                         <div
                             className="absolute left-0 top-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                            style={{ background: "var(--gold)", boxShadow: "0 0 12px var(--gold)" }}
+                            style={{ background: "var(--gold)", boxShadow: "2px 0 8px rgba(181,148,47,0.2)" }}
                         />
 
                         <p
@@ -120,16 +120,16 @@ export function AboutSection() {
                         {/* Teal left accent bar */}
                         <div
                             className="absolute left-0 top-0 bottom-0 w-0.5"
-                            style={{ background: "var(--teal)", opacity: 0.6 }}
+                            style={{ background: "var(--gold)", opacity: 0.6 }}
                         />
                         <div
                             className="absolute left-0 top-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                            style={{ background: "var(--teal)", boxShadow: "0 0 12px var(--teal)" }}
+                            style={{ background: "var(--gold)", boxShadow: "2px 0 8px rgba(11,126,115,0.2)" }}
                         />
 
                         <p
                             className="font-mono mb-5"
-                            style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--teal)", textTransform: "uppercase" }}
+                            style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--gold)", textTransform: "uppercase" }}
                         >
                             Our Mission
                         </p>

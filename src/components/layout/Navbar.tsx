@@ -26,14 +26,14 @@ export function Navbar() {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                    ? "bg-black/75 backdrop-blur-xl border-b"
-                    : "bg-transparent"
+                ? "bg-white/85 backdrop-blur-xl border-b"
+                : "bg-transparent"
                 }`}
             style={{
-                borderColor: scrolled ? "rgba(255,255,255,0.06)" : "transparent",
+                borderColor: scrolled ? "rgba(0,0,0,0.06)" : "transparent",
             }}
         >
-            <div className="max-w-7xl mx-auto px-6 md:px-10">
+            <div className="max-w-7xl mx-auto px-6 md:px-2">
                 <div className="flex h-20 items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 group">
@@ -48,7 +48,7 @@ export function Navbar() {
                             className="text-lg tracking-[0.2em] uppercase font-heading font-semibold"
                             style={{ color: "var(--foreground)", letterSpacing: "0.25em" }}
                         >
-                            Synergy
+                            Synergy Consultency & Solutions
                         </span>
                     </Link>
 
@@ -95,7 +95,7 @@ export function Navbar() {
                         transition={{ duration: 0.3 }}
                         className="md:hidden border-t overflow-hidden"
                         style={{
-                            background: "rgba(10,11,15,0.97)",
+                            background: "rgba(255,255,255,0.97)",
                             borderColor: "var(--border)",
                         }}
                     >

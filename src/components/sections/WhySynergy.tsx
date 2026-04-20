@@ -33,7 +33,7 @@ export function WhySynergy() {
                 style={{
                     width: "400px",
                     height: "400px",
-                    background: "radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(181,148,47,0.05) 0%, transparent 70%)",
                     filter: "blur(60px)",
                     zIndex: 0,
                 }}
@@ -154,7 +154,7 @@ export function WhySynergy() {
                             <div
                                 className="absolute inset-0"
                                 style={{
-                                    background: "linear-gradient(135deg, rgba(201,168,76,0.15) 0%, transparent 60%)",
+                                    background: "linear-gradient(135deg, rgba(181,148,47,0.10) 0%, transparent 60%)",
                                 }}
                             />
                         </div>
@@ -186,7 +186,7 @@ export function WhySynergy() {
                             />
                             <div
                                 className="absolute inset-0"
-                                style={{ background: "linear-gradient(135deg, rgba(201,168,76,0.12) 0%, transparent 60%)" }}
+                                style={{ background: "linear-gradient(135deg, rgba(181,148,47,0.08) 0%, transparent 60%)" }}
                             />
                         </div>
                     </motion.div>
