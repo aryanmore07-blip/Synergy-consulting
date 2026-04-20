@@ -53,7 +53,7 @@ export function IndustriesGrid() {
 
                 {/* Grid — 2 cols on mobile, 3 cols on md+ */}
                 <div
-                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px"
+                    className="industries-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px"
                     style={{ background: "var(--border)" }}
                 >
                     {industries.map((industry, i) => (

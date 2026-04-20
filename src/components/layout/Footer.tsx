@@ -34,9 +34,9 @@ export function Footer() {
             <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-10 py-14 md:py-20">
                 {/* Large centered wordmark */}
                 <div className="text-center mb-12 md:mb-16">
-                    <div className="flex items-center justify-center gap-3 md:gap-4 mb-4">
+                    <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-4">
                         <div
-                            className="w-px h-8 md:h-12"
+                            className="hidden sm:block w-px h-8 md:h-12"
                             style={{ background: "linear-gradient(to bottom, transparent, var(--gold))" }}
                         />
                         <h2
@@ -52,7 +52,7 @@ export function Footer() {
                             Synergy
                         </h2>
                         <div
-                            className="w-px h-8 md:h-12"
+                            className="hidden sm:block w-px h-8 md:h-12"
                             style={{ background: "linear-gradient(to bottom, transparent, var(--gold))" }}
                         />
                     </div>
@@ -86,7 +86,7 @@ export function Footer() {
                     </div>
 
                     {Object.entries(footerLinks).map(([section, links]) => (
-                        <div key={section}>
+                        <div key={section} className="min-w-0">
                             <p
                                 className="font-mono mb-4"
                                 style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "var(--gold)", textTransform: "uppercase" }}
@@ -98,10 +98,10 @@ export function Footer() {
                                     <li key={link.label}>
                                         <Link
                                             href={link.href}
-                                            className="group font-body text-sm relative inline-flex"
+                                            className="group font-body text-sm relative block w-full"
                                             style={{ color: "var(--foreground-muted)" }}
                                         >
-                                            <span className="transition-colors duration-200 group-hover:text-foreground">
+                                            <span className="block break-words transition-colors duration-200 group-hover:text-foreground">
                                                 {link.label}
                                             </span>
                                             <span

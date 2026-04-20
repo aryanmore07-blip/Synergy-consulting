@@ -206,7 +206,7 @@ export default function TeamPage() {
                                     }}
                                 />
 
-                                <div className="p-8 md:p-12">
+                                <div className="p-6 sm:p-8 md:p-12">
                                     {/* Header */}
                                     <div className="mb-8">
                                         <h2
@@ -227,7 +227,7 @@ export default function TeamPage() {
                                                     style={{ color: "var(--gold)" }}
                                                 />
                                                 <span
-                                                    className="font-body text-sm"
+                                                    className="font-body text-sm break-words"
                                                     style={{ color: "var(--foreground-muted)" }}
                                                 >
                                                     {member.location}
@@ -239,7 +239,7 @@ export default function TeamPage() {
                                                     style={{ color: "var(--teal)" }}
                                                 />
                                                 <span
-                                                    className="font-body text-sm"
+                                                    className="font-body text-sm break-words"
                                                     style={{ color: "var(--foreground-muted)" }}
                                                 >
                                                     {member.experience} in {member.roleLine}
@@ -252,7 +252,7 @@ export default function TeamPage() {
                                             {member.specializations.map((spec, i) => (
                                                 <span
                                                     key={i}
-                                                    className="font-mono px-3 py-1.5"
+                                                    className="font-mono px-3 py-1.5 text-center break-words"
                                                     style={{
                                                         fontSize: "0.7rem",
                                                         letterSpacing: "0.05em",
@@ -294,7 +294,7 @@ export default function TeamPage() {
                                             Professional Profile
                                         </h3>
                                         <p
-                                            className="font-body text-sm"
+                                            className="font-body text-sm break-words"
                                             style={{
                                                 color: "var(--foreground-muted)",
                                                 lineHeight: 1.9,
@@ -337,7 +337,7 @@ export default function TeamPage() {
                                                     {section.items.map((item, i) => (
                                                         <li
                                                             key={i}
-                                                            className="font-body text-sm flex items-start gap-2"
+                                                            className="font-body text-sm flex min-w-0 items-start gap-2"
                                                             style={{ color: "var(--foreground-muted)" }}
                                                         >
                                                             <span
@@ -348,7 +348,7 @@ export default function TeamPage() {
                                                             >
                                                                 •
                                                             </span>
-                                                            <span style={{ lineHeight: 1.7 }}>
+                                                            <span className="break-words" style={{ lineHeight: 1.7 }}>
                                                                 {item}
                                                             </span>
                                                         </li>

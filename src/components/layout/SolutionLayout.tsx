@@ -26,7 +26,7 @@ export function SolutionLayout({
         <div className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)" }}>
             {/* Hero Header */}
             <section
-                className="py-28 border-b relative overflow-hidden"
+                className="py-24 sm:py-28 border-b relative overflow-hidden"
                 style={{
                     background: "var(--surface)",
                     borderColor: "var(--border)",
@@ -38,10 +38,10 @@ export function SolutionLayout({
                     style={{ background: "linear-gradient(to right, transparent, var(--gold) 30%, var(--gold) 70%, transparent)", opacity: 0.5 }}
                 />
 
-                <div className="max-w-7xl mx-auto px-6 md:px-10">
+                <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10">
                     <Link
                         href={backHref}
-                        className="inline-flex items-center gap-2 mb-12 font-mono transition-colors duration-200"
+                        className="inline-flex items-center gap-2 mb-10 sm:mb-12 font-mono transition-colors duration-200"
                         style={{ fontSize: "0.7rem", letterSpacing: "0.12em", color: "var(--foreground-muted)", textTransform: "uppercase" }}
                     >
                         <ArrowLeft className="w-3.5 h-3.5" />
@@ -50,7 +50,7 @@ export function SolutionLayout({
 
                     <div className="flex flex-col md:flex-row gap-8 items-start">
                         <div
-                            className="p-5 border"
+                            className="p-4 sm:p-5 border"
                             style={{ borderColor: "var(--border-gold)", background: "var(--gold-dim)", color: "var(--gold)" }}
                         >
                             <Icon className="w-10 h-10" strokeWidth={1.5} />
@@ -73,7 +73,7 @@ export function SolutionLayout({
                 </div>
             </section>
 
-            <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 grid lg:grid-cols-3 gap-12">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10 py-12 sm:py-16 grid lg:grid-cols-3 gap-12">
                 {/* Main Content */}
                 <div className="lg:col-span-2 space-y-12">
                     {children}
@@ -94,7 +94,7 @@ export function SolutionLayout({
                         </p>
                         <ul className="space-y-3">
                             {features.map((feature, i) => (
-                                <li key={i} className="flex items-start gap-3 font-body text-sm" style={{ color: "var(--foreground-muted)" }}>
+                                <li key={i} className="flex items-start gap-3 font-body text-sm break-words" style={{ color: "var(--foreground-muted)" }}>
                                     <span
                                         className="mt-2 flex-shrink-0 w-1 h-1 rounded-full"
                                         style={{ background: "var(--gold)" }}
@@ -120,11 +120,11 @@ export function SolutionLayout({
                             {specs.map((spec, i) => (
                                 <div
                                     key={i}
-                                    className="flex justify-between items-center text-sm pb-3 border-b last:border-0 last:pb-0"
+                                    className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between text-sm pb-3 border-b last:border-0 last:pb-0"
                                     style={{ borderColor: "var(--border)" }}
                                 >
-                                    <span className="font-mono" style={{ fontSize: "0.7rem", color: "var(--foreground-muted)" }}>{spec.label}</span>
-                                    <span className="font-body font-medium text-right" style={{ color: "var(--foreground)" }}>{spec.value}</span>
+                                    <span className="font-mono shrink-0" style={{ fontSize: "0.7rem", color: "var(--foreground-muted)" }}>{spec.label}</span>
+                                    <span className="font-body font-medium text-left sm:text-right min-w-0 break-words" style={{ color: "var(--foreground)" }}>{spec.value}</span>
                                 </div>
                             ))}
                         </div>

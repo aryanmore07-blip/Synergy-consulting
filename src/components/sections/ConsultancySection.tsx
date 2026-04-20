@@ -109,7 +109,7 @@ export function ConsultancySection() {
 
                 {/* Consultancy cards */}
                 <div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
+                    className="consultancy-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
                     style={{ background: "var(--border)" }}
                 >
                     {consultancy.map((s, i) => (
@@ -119,7 +119,7 @@ export function ConsultancySection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1, duration: 0.6 }}
-                            className="card-dark group relative flex flex-col p-6 sm:p-8 pt-10 sm:pt-12 border-0"
+                            className="card-dark group relative flex min-w-0 flex-col p-6 sm:p-8 pt-10 sm:pt-12 border-0"
                             style={{ background: "var(--surface-raised)", minHeight: "300px" }}
                         >
                             {/* Top accent line */}
@@ -155,7 +155,7 @@ export function ConsultancySection() {
 
                             {/* Description */}
                             <p
-                                className="font-body text-sm flex-1"
+                                className="font-body text-sm flex-1 break-words"
                                 style={{ color: "var(--foreground-muted)", lineHeight: 1.75 }}
                             >
                                 {s.description}
